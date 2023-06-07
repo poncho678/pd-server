@@ -2,5 +2,11 @@ export default {
     name: 'contact',
     type: 'document',
     title: 'Contact',
-    fields: []
+    fields: [
+        {
+            name: 'title',
+            type: 'string',
+            title: 'Title'
+        }
+    ]
 }

@@ -1,6 +1,14 @@
+import single from './schema.helper'
+
 export default {
-    name: 'about',
+    name: single.about.name,
     type: 'document',
-    title: 'About',
-    fields: []
+    title: single.about.title,
+    fields: [
+        {
+            name: 'title',
+            type: 'string',
+            title: 'Title'
+        }
+    ]
 }
