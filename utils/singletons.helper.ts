@@ -1,4 +1,4 @@
-export const single = {
+export default {
     about: {
         name: 'about',
         title: 'About'
@@ -16,5 +16,3 @@ export const single = {
         title: 'Privacy'
     },
 }
-
-export const allSingles = []

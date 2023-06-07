@@ -1,9 +1,9 @@
-import single from './schema.helper'
+import singletons from '../utils/singletons.helper'
 
 export default {
-    name: single.about.name,
+    name: singletons.about.name,
     type: 'document',
-    title: single.about.title,
+    title: singletons.about.title,
     fields: [
         {
             name: 'title',

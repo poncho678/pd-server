@@ -2,6 +2,7 @@ import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
+import singletons from './utils/singletons.helper'
 
 const singletonActions = new Set(["publish", "discardChanges", "restore"])  
 const singletonTypes = new Set(['about', 'contact', 'imprint', 'privacy'])
@@ -13,9 +14,9 @@ export default defineConfig ({
   dataset: 'production',
   plugins: [
     deskTool({
-      structure: (S) =>
+      structure: (S) => 
         S.list()
-          .title("About")
+          .title("Pages")
           .items([
             S.listItem()
               .title("About")
