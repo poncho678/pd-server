@@ -6,9 +6,25 @@ export default {
   title: singletons['about'].title,
   fields: [
     {
-      name: 'title',
-      type: 'string',
-      title: 'Title',
+      name: 'aboutText',
+      title: 'About Text',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
+      name: 'profileImage',
+      title: 'Profile Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          name: 'caption',
+          type: 'string',
+          title: 'Caption',
+        },
+      ],
     },
   ],
 }
