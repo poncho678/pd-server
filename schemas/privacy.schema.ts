@@ -6,9 +6,10 @@ export default {
   title: singletons['privacy'].title,
   fields: [
     {
-      name: 'title',
-      type: 'string',
-      title: 'Title',
+      name: 'privacy',
+      type: 'array',
+      title: 'Privacy',
+      of: [{type: 'block'}],
     },
   ],
 }
