@@ -6,9 +6,24 @@ export default {
   title: singletons['contact'].title,
   fields: [
     {
-      name: 'title',
-      type: 'string',
-      title: 'Title',
+      name: 'instagram',
+      type: 'url',
+      title: 'Instagram',
+    },
+    {
+      name: 'mail',
+      type: 'url',
+      title: 'Mail',
+      validation: (Rule: any) =>
+        Rule.uri({
+          scheme: ['mailto'],
+        }),
+    },
+    {
+      name: 'contact',
+      title: 'Contact',
+      type: 'array',
+      of: [{type: 'block'}],
     },
   ],
 }
