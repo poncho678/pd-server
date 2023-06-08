@@ -1,12 +1,14 @@
+import singletons from '../utils/singletons.helper'
+
 export default {
-    name: 'privacy',
-    type: 'document',
-    title: 'Privacy',
-    fields: [
-        {
-            name: 'title',
-            type: 'string',
-            title: 'Title'
-        }
-    ]
+  name: singletons['privacy'].name,
+  type: 'document',
+  title: singletons['privacy'].title,
+  fields: [
+    {
+      name: 'title',
+      type: 'string',
+      title: 'Title',
+    },
+  ],
 }
