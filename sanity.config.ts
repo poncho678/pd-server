@@ -19,15 +19,15 @@ export default defineConfig({
         S.list()
           .title('Pages')
           .items([
+            // Regular document types
+            S.documentTypeListItem('projects').title('Projects'),
+            S.divider(),
             ...singletonArray.map((x) =>
               S.listItem()
                 .title(x.title)
                 .id(x.name)
                 .child(S.document().schemaType(x.name).documentId(x.title))
             ),
-
-            // Regular document types
-            S.documentTypeListItem('projects').title('Projects'),
           ]),
     }),
     visionTool(),
