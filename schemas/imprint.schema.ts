@@ -6,9 +6,10 @@ export default {
   title: singletons['imprint'].title,
   fields: [
     {
-      name: 'title',
-      type: 'string',
-      title: 'Title',
+      name: 'imprint',
+      type: 'array',
+      title: 'Imprint',
+      of: [{type: 'block'}],
     },
   ],
 }
