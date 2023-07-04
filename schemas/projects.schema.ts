@@ -1,8 +1,13 @@
+import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list'
+import slugify from 'slugify'
+
 export default {
   name: 'projects',
   type: 'document',
   title: 'Projects',
+  orderings: [orderRankOrdering],
   fields: [
+    orderRankField({type: 'projects'}),
     {
       name: 'title',
       type: 'string',
@@ -12,13 +17,14 @@ export default {
       title: 'Slug',
       name: 'slug',
       type: 'slug',
+      description: 'Please generate a slug before you publish the project.',
       options: {
         source: 'title',
-        slugify: (input: string) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
+        slugify: (input: string) => slugify(input).toLocaleLowerCase(),
       },
       validation: (Rule: any) =>
         Rule.required().warning(
-          'A slug is required. Please generate a slug before you publish a project.'
+          'A slug is required. Please generate a slug to publish the project.'
         ),
     },
     {
