@@ -61,7 +61,7 @@ export default {
     {
       title: 'Trailer',
       name: 'trailer',
-      description: '',
+      description: 'Provide a link to a trailer. Preferably hosted on vimeo.',
       type: 'url',
       validation: (Rule: any) =>
         Rule.uri({
@@ -99,7 +99,7 @@ export default {
     {
       title: 'Published',
       name: 'published',
-      description: 'Set to published when this project should be visible on the frontend',
+      description: 'Set to published to make the project visible on the frontend.',
       type: 'boolean',
       initialValue: true,
     },
