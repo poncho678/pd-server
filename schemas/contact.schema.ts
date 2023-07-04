@@ -6,9 +6,10 @@ export default {
   title: singletons['contact'].title,
   fields: [
     {
-      name: 'instagram',
-      type: 'url',
-      title: 'Instagram',
+      name: 'contact',
+      title: 'Contact',
+      type: 'array',
+      of: [{type: 'block'}],
     },
     {
       name: 'mail',
@@ -20,10 +21,19 @@ export default {
         }),
     },
     {
-      name: 'contact',
-      title: 'Contact',
-      type: 'array',
-      of: [{type: 'block'}],
+      name: 'instagram',
+      type: 'url',
+      title: 'Instagram',
+    },
+    {
+      name: 'vimeo',
+      type: 'url',
+      title: 'Vimeo',
+    },
+    {
+      name: 'crewUnited',
+      type: 'url',
+      title: 'Crew United',
     },
   ],
 }
