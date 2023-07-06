@@ -38,7 +38,7 @@ export default {
     defineField({
       name: 'featuredImage',
       title: 'Featured Image',
-      description: 'The Image featured on the Frontpage.',
+      description: 'The featured Image on the Frontpage.',
       type: 'image',
       validation: (Rule: any) => Rule.required().warning('An image is required.'),
       fields: [
