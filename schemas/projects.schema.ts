@@ -1,21 +1,22 @@
 import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list'
+import {defineArrayMember, defineField} from 'sanity'
 import slugify from 'slugify'
 
 export default {
   name: 'projects',
-  type: 'document',
   title: 'Projects',
+  type: 'document',
   orderings: [orderRankOrdering],
   fields: [
     orderRankField({type: 'projects'}),
     {
       name: 'title',
-      type: 'string',
       title: 'Title',
+      type: 'string',
     },
     {
-      title: 'Slug',
       name: 'slug',
+      title: 'Slug',
       type: 'slug',
       description: 'Please generate a slug before you publish the project.',
       options: {
@@ -27,28 +28,29 @@ export default {
           'A slug is required. Please generate a slug to publish the project.'
         ),
     },
-    {
-      title: 'Featured Image',
+    defineField({
       name: 'featuredImage',
+      title: 'Featured Image',
       type: 'image',
       fields: [
-        {
-          title: 'Description',
+        defineField({
           name: 'description',
+          title: 'Description',
           type: 'string',
-        },
+        }),
       ],
       options: {
+        hotspot: true,
         metadata: [
           'blurhash', // Default: included
           'lqip', // Default: included
           'palette', // Default: included
         ],
       },
-    },
+    }),
     {
-      title: 'Poster',
       name: 'poster',
+      title: 'Poster',
       type: 'image',
       options: {
         metadata: [
@@ -58,47 +60,28 @@ export default {
         ],
       },
     },
-    {
-      title: 'Trailer',
-      name: 'trailer',
-      description: 'Provide a link to a trailer. Preferably hosted on vimeo.',
-      type: 'url',
-      validation: (Rule: any) =>
-        Rule.uri({
-          scheme: ['http', 'https'],
-        }).warning('Invalid. A valid URL starts with “http://” or “https://”, please try again.'),
-    },
-    {
-      title: 'Stills',
-      name: 'stills',
+    defineField({
+      name: 'pageBuilder',
+      title: 'Page Builder',
       type: 'array',
       of: [
-        {
-          type: 'image',
-          options: {
-            metadata: [
-              'blurhash', // Default: included
-              'lqip', // Default: included
-              'palette', // Default: included
-            ],
-          },
-          fields: [
-            {
-              title: 'Description',
-              name: 'description',
-              type: 'string',
-            },
-          ],
-        },
+        defineArrayMember({
+          name: 'synopsis',
+          type: 'synopsis',
+        }),
+        defineArrayMember({
+          name: 'stills',
+          type: 'stills',
+        }),
+        defineArrayMember({
+          name: 'video',
+          type: 'video',
+        }),
       ],
-
-      options: {
-        layout: 'grid',
-      },
-    },
+    }),
     {
-      title: 'Published',
       name: 'published',
+      title: 'Published',
       description: 'Set to published to make the project visible on the frontend.',
       type: 'boolean',
       initialValue: true,
