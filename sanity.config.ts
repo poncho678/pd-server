@@ -35,6 +35,7 @@ export default defineConfig({
               S.listItem()
                 .title(x.title)
                 .id(x.name)
+                .icon(x.icon)
                 .child(S.document().schemaType(x.name).documentId(x.title))
             ),
           ]),
