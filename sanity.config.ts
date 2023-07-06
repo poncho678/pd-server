@@ -3,6 +3,8 @@ import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 import singletons from './utils/singletons.helper'
+import {DocumentsIcon} from '@sanity/icons'
+
 import {orderableDocumentListDeskItem} from '@sanity/orderable-document-list'
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore'])
@@ -21,7 +23,13 @@ export default defineConfig({
           .title('Pages')
           .items([
             // Regular document types
-            orderableDocumentListDeskItem({type: 'projects', title: 'Projects', S, context}),
+            orderableDocumentListDeskItem({
+              type: 'projects',
+              title: 'Projects',
+              S,
+              context,
+              icon: DocumentsIcon,
+            }),
             S.divider(),
             ...singletonArray.map((x) =>
               S.listItem()
