@@ -7,6 +7,12 @@ export default {
   title: 'Projects',
   type: 'document',
   orderings: [orderRankOrdering],
+  validation: (Rule: any) =>
+    Rule.custom((fields: any) => {
+      if (fields.title.length < 0 || fields.slug.length < 0 || fields.featuredImage === 'undefined')
+        return 'Please fill out the required fields.'
+      return true
+    }),
   fields: [
     orderRankField({type: 'projects'}),
     {
@@ -26,12 +32,13 @@ export default {
       },
       validation: (Rule: any) =>
         Rule.required().warning(
-          'A slug is required. Please generate a slug to publish the project.'
+          'A slug is required. Please generate a slug before you publish the project.'
         ),
     },
     defineField({
       name: 'featuredImage',
       title: 'Featured Image',
+      description: 'The Image featured on the Frontpage.',
       type: 'image',
       validation: (Rule: any) => Rule.required().warning('An image is required.'),
       fields: [
