@@ -13,6 +13,7 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: (Rule: any) => Rule.required().warning('A title is required.'),
     },
     {
       name: 'slug',
@@ -32,6 +33,7 @@ export default {
       name: 'featuredImage',
       title: 'Featured Image',
       type: 'image',
+      validation: (Rule: any) => Rule.required().warning('An image is required.'),
       fields: [
         defineField({
           name: 'description',
@@ -82,9 +84,9 @@ export default {
     {
       name: 'published',
       title: 'Published',
-      description: 'Set to published to make the project visible on the frontend.',
+      description: 'Show Project on the frontend.',
       type: 'boolean',
-      initialValue: true,
+      initialValue: false,
     },
   ],
 }
