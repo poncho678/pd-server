@@ -9,10 +9,12 @@ export default {
       name: 'siteTitle',
       title: 'Site Title',
       type: 'string',
+      description: 'This is the title of the website.',
     },
     {
       name: 'siteDescription',
       title: 'Site Description',
+      description: 'This text will be visible on search engines.',
       type: 'text',
       validation: (Rule: any) =>
         Rule.max(155).warning('Description should not be longer than 155 characters.'),
@@ -20,6 +22,7 @@ export default {
     {
       name: 'aboutText',
       title: 'About Text',
+      description: 'This text will be visible on the about page.',
       type: 'array',
       of: [{type: 'block'}],
     },
@@ -27,14 +30,16 @@ export default {
       name: 'profileImage',
       title: 'Profile Image',
       type: 'image',
+      description: 'This image will be visible on the about page.',
       options: {
         hotspot: true,
       },
       fields: [
         {
-          name: 'caption',
+          name: 'alt',
           type: 'string',
-          title: 'Caption',
+          title: 'Alternative Text',
+          description: 'Descriptive image text.',
         },
       ],
     },
