@@ -75,6 +75,10 @@ export default {
       type: 'array',
       of: [
         defineArrayMember({
+          name: 'list',
+          type: 'list',
+        }),
+        defineArrayMember({
           name: 'logline',
           type: 'logline',
         }),

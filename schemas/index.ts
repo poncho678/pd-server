@@ -9,8 +9,9 @@ import {videoType} from './customTypes/videoType'
 import {synopsisType} from './customTypes/synopsisType'
 import {loglineType} from './customTypes/loglineType'
 import {teamType} from './customTypes/teamType'
+import {listType} from './customTypes/listsType'
 
 const schemas = [about, contact, imprint, privacy, projects]
-const types = [loglineType, stillsType, synopsisType, teamType, videoType]
+const types = [listType, loglineType, stillsType, synopsisType, teamType, videoType]
 
 export const schemaTypes = [...schemas, ...types]
