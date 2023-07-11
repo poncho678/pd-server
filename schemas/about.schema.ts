@@ -1,3 +1,4 @@
+import {defineArrayMember, defineField} from 'sanity'
 import singletons from '../utils/singletons.helper'
 
 export default {
@@ -43,5 +44,16 @@ export default {
         },
       ],
     },
+    defineField({
+      name: 'lists',
+      title: 'Lists',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          name: 'list',
+          type: 'list',
+        }),
+      ],
+    }),
   ],
 }
