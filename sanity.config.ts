@@ -13,7 +13,7 @@ const singletonArray = Object.values(singletons)
 
 export default defineConfig({
   name: 'default',
-  title: 'pauldrey',
+  title: 'Paul Drey',
   projectId: process.env.SANITY_STUDIO_PROJECT_ID,
   dataset: 'production',
   plugins: [
