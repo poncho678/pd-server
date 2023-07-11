@@ -55,4 +55,15 @@ export const listType = defineType({
     }),
   ],
   icon: UlistIcon,
+  preview: {
+    select: {
+      title: 'listTitle',
+    },
+    prepare({title}) {
+      return {
+        title: title || 'No title',
+        subtitle: 'List',
+      }
+    },
+  },
 })
