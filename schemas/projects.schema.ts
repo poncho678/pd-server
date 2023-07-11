@@ -75,12 +75,20 @@ export default {
       type: 'array',
       of: [
         defineArrayMember({
+          name: 'logline',
+          type: 'logline',
+        }),
+        defineArrayMember({
           name: 'synopsis',
           type: 'synopsis',
         }),
         defineArrayMember({
           name: 'stills',
           type: 'stills',
+        }),
+        defineArrayMember({
+          name: 'team',
+          type: 'team',
         }),
         defineArrayMember({
           name: 'video',
