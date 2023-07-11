@@ -75,29 +75,50 @@ export default {
       type: 'array',
       of: [
         defineArrayMember({
-          name: 'list',
-          type: 'list',
+          name: 'stills',
+          type: 'stills',
         }),
         defineArrayMember({
           name: 'logline',
           type: 'logline',
         }),
         defineArrayMember({
-          name: 'synopsis',
-          type: 'synopsis',
+          name: 'video',
+          type: 'video',
         }),
         defineArrayMember({
-          name: 'stills',
-          type: 'stills',
+          name: 'synopsis',
+          type: 'synopsis',
         }),
         defineArrayMember({
           name: 'team',
           type: 'team',
         }),
         defineArrayMember({
-          name: 'video',
-          type: 'video',
+          name: 'list',
+          type: 'list',
         }),
+      ],
+    }),
+    defineField({
+      name: 'awards',
+      title: 'Awards',
+      description: 'Add Awards/Laurels. (Only visible on the landingpage)',
+      type: 'array',
+      options: {layout: 'grid'},
+      validation: (Rule) => Rule.max(3),
+      of: [
+        {
+          type: 'image',
+          options: {
+            hotspot: true,
+            metadata: [
+              'blurhash', // Default: included
+              'lqip', // Default: included
+              'palette', // Default: included
+            ],
+          },
+        },
       ],
     }),
     {
