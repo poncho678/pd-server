@@ -7,11 +7,6 @@ export const teamType = defineType({
   type: 'object',
   fields: [
     defineField({
-      name: 'poster',
-      title: 'Poster',
-      type: 'image',
-    }),
-    defineField({
       name: 'main',
       title: 'Main',
       type: 'array',
