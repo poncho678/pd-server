@@ -8,4 +8,12 @@ export const synopsisType = defineType({
   type: 'object',
   fields: [{name: 'text', title: 'Text', type: 'array', of: [{type: 'block'}]}],
   icon: DocumentTextIcon,
+  preview: {
+    prepare() {
+      return {
+        title: 'Synopsis',
+        subtitle: 'Text',
+      }
+    },
+  },
 })

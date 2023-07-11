@@ -23,4 +23,12 @@ export const videoType = defineType({
     }),
   ],
   icon: DocumentVideoIcon,
+  preview: {
+    prepare() {
+      return {
+        title: 'Video',
+        subtitle: 'Link',
+      }
+    },
+  },
 })

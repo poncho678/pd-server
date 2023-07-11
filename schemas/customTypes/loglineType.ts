@@ -1,3 +1,4 @@
+import {StringIcon} from '@sanity/icons'
 import {defineField, defineType} from 'sanity'
 
 export const loglineType = defineType({
@@ -10,4 +11,13 @@ export const loglineType = defineType({
       type: 'text',
     }),
   ],
+  icon: StringIcon,
+  preview: {
+    prepare() {
+      return {
+        title: 'Logline',
+        subtitle: 'Text',
+      }
+    },
+  },
 })
