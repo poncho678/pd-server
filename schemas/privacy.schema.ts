@@ -1,3 +1,4 @@
+import {defineField} from 'sanity'
 import singletons from '../utils/singletons.helper'
 
 export default {
@@ -5,11 +6,11 @@ export default {
   type: 'document',
   title: singletons['privacy'].title,
   fields: [
-    {
+    defineField({
       name: 'privacy',
       type: 'array',
       title: 'Privacy',
       of: [{type: 'block'}],
-    },
+    }),
   ],
 }

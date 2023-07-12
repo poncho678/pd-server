@@ -15,12 +15,12 @@ export default {
     }),
   fields: [
     orderRankField({type: 'projects'}),
-    {
+    defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
       validation: (Rule: any) => Rule.required().warning('A title is required.'),
-    },
+    }),
     {
       name: 'slug',
       title: 'Slug',
@@ -57,7 +57,7 @@ export default {
         ],
       },
     }),
-    {
+    defineField({
       name: 'poster',
       title: 'Poster',
       type: 'image',
@@ -68,7 +68,7 @@ export default {
           'palette', // Default: included
         ],
       },
-    },
+    }),
     defineField({
       name: 'pageBuilder',
       title: 'Page Builder',
@@ -121,12 +121,12 @@ export default {
         },
       ],
     }),
-    {
+    defineField({
       name: 'published',
       title: 'Published',
       description: 'Show Project on the frontend.',
       type: 'boolean',
       initialValue: false,
-    },
+    }),
   ],
 }

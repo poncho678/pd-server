@@ -6,28 +6,28 @@ export default {
   type: 'document',
   title: singletons['about'].title,
   fields: [
-    {
+    defineField({
       name: 'siteTitle',
       title: 'Site Title',
       type: 'string',
       description: 'This is the title of the website.',
-    },
-    {
+    }),
+    defineField({
       name: 'siteDescription',
       title: 'Site Description',
       description: 'This text will be visible on search engines.',
       type: 'text',
       validation: (Rule: any) =>
         Rule.max(155).warning('Description should not be longer than 155 characters.'),
-    },
-    {
+    }),
+    defineField({
       name: 'aboutText',
       title: 'About Text',
       description: 'This text will be visible on the about page.',
       type: 'array',
       of: [{type: 'block'}],
-    },
-    {
+    }),
+    defineField({
       name: 'profileImage',
       title: 'Profile Image',
       type: 'image',
@@ -36,14 +36,14 @@ export default {
         hotspot: true,
       },
       fields: [
-        {
+        defineField({
           name: 'alt',
           type: 'string',
           title: 'Alternative Text',
           description: 'Descriptive image text.',
-        },
+        }),
       ],
-    },
+    }),
     defineField({
       name: 'lists',
       title: 'Lists',
